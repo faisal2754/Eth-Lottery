@@ -20,7 +20,16 @@ async function deploy() {
             gas: '1000000'
         })
 
+    console.log(interface)
     console.log(`Contract deployed to ${result.options.address}`)
 }
 
-deploy()
+// deploy()
+
+async function bruh() {
+    const accounts = await web3.eth.getAccounts()
+    console.log(`Deploying from ${accounts[0]}`)
+    let balance = await web3.eth.getBalance(accounts[0])
+    console.log(balance)
+}
+bruh()
